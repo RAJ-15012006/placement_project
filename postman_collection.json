@@ -15,7 +15,7 @@
             "header": [{ "key": "Content-Type", "value": "application/json" }],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"email\": \"admin@erp.com\",\n  \"password\": \"Admin@123\"\n}"
+              "raw": "{\n  \"email\": \"{{login_email}}\",\n  \"password\": \"{{login_password}}\"\n}"
             },
             "url": { "raw": "{{baseUrl}}/api/auth/login", "host": ["{{baseUrl}}"], "path": ["api", "auth", "login"] }
           }
@@ -176,6 +176,8 @@
   ],
   "variable": [
     { "key": "baseUrl", "value": "http://localhost:5000" },
-    { "key": "token", "value": "" }
+    { "key": "token", "value": "" },
+    { "key": "login_email", "value": "admin@erp.com" },
+    { "key": "login_password", "value": "Admin@123" }
   ]
 }

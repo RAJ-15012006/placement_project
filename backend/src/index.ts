@@ -14,7 +14,7 @@ import dashboardRoutes from './routes/dashboard';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 // Security & Utility Middleware
 app.use(helmet());
@@ -53,8 +53,8 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
 });
 
 // Start Server & Init DB
-app.listen(Number(PORT), '127.0.0.1', async () => {
-  console.log(`🚀 Mini ERP Backend Server running on http://127.0.0.1:${PORT}`);
+app.listen(Number(PORT), async () => {
+  console.log(`🚀 Mini ERP Backend Server running on http://localhost:${PORT}`);
   console.log(`📡 Environment: ${process.env.NODE_ENV || 'development'}`);
   await initDB();
 });
